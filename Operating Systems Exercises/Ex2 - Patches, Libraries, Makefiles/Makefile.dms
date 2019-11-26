@@ -1,0 +1,6 @@
+CC=cc
+CFLAGS=-I
+
+mean: mean.c	
+	$(CC) -c mean.c
+	ar cr libmath.a mean.o

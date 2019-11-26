@@ -1,0 +1,15 @@
+diff --git a/init/main.c b/init/main.c
+index 5e13c544bbf4..e34e4504fede 100644
+--- a/init/main.c
++++ b/init/main.c
+@@ -1066,7 +1066,9 @@ static int __ref kernel_init(void *unused)
+ 	free_initmem();
+ 	mark_readonly();
+ 	system_state = SYSTEM_RUNNING;
+-	numa_default_policy();
++	numa_default_policy(); 
++
++	printk("\n##### Ross Spencer (UFID: 9109-1549) Hi Jeremiah!! #####\n");
+ 
+ 	rcu_end_inkernel_boot();
+ 

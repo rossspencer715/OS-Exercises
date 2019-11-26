@@ -1,0 +1,4 @@
+all:
+	g++ -o sender sender.cpp -lcrypto -lssl
+	g++ -o receiver receiver.cpp -lcrypto -lssl
+

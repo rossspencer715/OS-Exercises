@@ -1,0 +1,20 @@
+.TH EXERCISE 1
+.SH NAME
+Ross Spencer
+.SH DESCRIPTION
+This assignment serves as a refresher of terminal commands to be used throughout the course.
+.SH STEPS
+.SH STEP 1
+In step 1, I created a directory spencer_ross using the mkdir command.
+.SH STEP 2
+In step 2, I found files containing "android_dev" utilizing the command "grep -r 'android_dev'" within the usr/rep/src/reptilian-kernel directory.
+.SH STEP 3
+In step 3, I used the same command from step 2 with the addition " > ../../../../home/reptilian/spencer_ross/ex1.txt" to pipe it into a new text file named ex1.txt in the spencer_ross folder.
+.SH STEP 4
+In step 4, I took a screenshot of the command from step 3 and a screenshot of me running an ls in the directory of the first file listed after the grep command from step 2.
+.SH STEP 5
+In step 5, I didn't have to move the file since I added all of the "../../../../home/reptilian/spencer_ross" initially upon creating the text file, but if I had had to move the file, I would've proceded within the 'usr/rep/src/reptilian-kernel' with the command "mv ex1.txt ../../../../home/reptilian/spencer-ross/ex1.txt" to move it up to the root directory then back down to the spencer-ross folder.
+.SH STEP 6
+In step 6, I made a tar file by navigating my shell to home/reptilian and running the command "tar -cvf ex1.tar spencer_ross" using https://www.bleepingcomputer.com/forums/t/42124/how-to-create-an-archive-using-tar-in-linux/ as a guide.
+.SH STEP 7
+In step 7, I compressed the tar file created in step 6 using the command "gzip ex1.tar" as described in https://www.lifewire.com/example-uses-of-the-linux-gzip-command-4078675.

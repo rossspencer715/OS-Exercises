@@ -1,0 +1,20 @@
+.TH PROJECT 0 
+.SH NAME
+Ross Spencer
+.SH ASSIGNMENT
+project 0 - modify kernel to display name and boot message in debug mode
+.SH DESCRIPTION
+.B project 0 required - 
+modifies the kernel to display my name (Ross Spencer) above "Detecting Android x-86" upon boot in debug mode. To do this, I changed file usr/rep/src/reptilian-kernel/init/main.c by adding a printk statement to line 1072 in vim right before the call to rcu_end_inkernel_boot() (which I grepped for since Jeremiah told us our code should go near it in the source code, and init/main.c seemed like a probable candidate for where this line should go). For printk statements and how to display text in a kernel module, I used https://www.tldp.org/LDP/lkmpg/2.4/html/x149.html as a reference.
+
+.B project 0 extra credit - 
+modifies the GRUB menu to display my (firstname lastname) next to the default boot option. This was found using a recursive grep command in the root directory on the phrase "video=LVDS" used in one of the later boot options, which showed me that the file I needed to modify was mnt/sysroot/grub/menu.lst (since every other file that popped up was a "Permission denied" error), where I simply added "(Ross Spencer)" next to the first option.
+
+.B testing - 
+consisted of removing the modified kernel from VirtualBox and making a clean clone of the unmodified kernel following ex0 as a guide, then transferring and patching the new clone with the diff file as described by the methodology in the project description.
+
+.B man file - 
+was created relying heavily upon https://liw.fi/manpages/ as a style guide.
+
+.B unlisted video - 
+can be located at http://youtu.be/vOKeoW78dLc?hd=1

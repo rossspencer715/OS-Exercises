@@ -1,0 +1,28 @@
+.TH EXERCISE 3
+.SH NAME
+Exercise 3
+
+.SH SYNOPSIS
+.B learning how to use gdb for debugging
+
+.SH DESCRIPTION
+.B Part 2
+.RS 3 
+Reason for Failure: 
+.RS 3
+Upon stepping through each statement in the program, I determined it was crashing right after the call to “whoops()”. Once in there, I saw that the crash happened during the line “*a =3701;” which attempts to dereference a null pointer. I tried running that in my own C program to confirm that that was the issue, and I was right. :)
+
+.RE .RE
+.B Part 3 
+.RS 3
+Function:
+.RS 3
+This program takes a and b and adds them, then stores the result in variable c. I discovered this by calling the “info variables” method inside gdb, which listed a bunch of irrelevant variables in different files before listing the ones in the current stack. After much testing, I tracked the values of a and b and saw c go from 0 to the value of a+b (=30+7) until the method ends, at which the value goes back to 0, probably because it’s a local variable in the original source code.
+.RE
+Int Variables:
+.RS 3
+The values at the beginning are a=30, b=7, and c=0, and at the end the values are a=30, b=7, c=37.
+
+.RE
+.SH REFERENCES
+https://stackoverflow.com/questions/4264930/how-to-print-the-string-a-pointer-points-to-while-debugging-using-gdb -> the comments here were super helpful in getting my secret message to print.

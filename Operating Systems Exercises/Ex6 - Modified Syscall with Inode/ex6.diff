@@ -1,0 +1,14 @@
+diff --git a/fs/read_write.c b/fs/read_write.c
+index ae6ee7bbee13..206920eb3de3 100644
+--- a/fs/read_write.c
++++ b/fs/read_write.c
+@@ -583,6 +583,9 @@ ssize_t ksys_read(unsigned int fd, char __user *buf, size_t count)
+ 		if (ret >= 0)
+ 			file_pos_write(f.file, pos);
+ 		fdput_pos(f);
++		struct path fpath = f.file->f_path;
++		unsigned long i = fpath.dentry->d_inode->i_ino;
++		printk("%lu", i);
+ 	}
+ 	return ret;
+ }
